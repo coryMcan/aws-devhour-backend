@@ -1,16 +1,15 @@
-import * as cdk from '@aws-cdk/core';
+import * as cdk from "@aws-cdk/core";
+import {CfnOutput, Duration} from "@aws-cdk/core";
+import {AuthorizationType, PassthroughBehavior} from "@aws-cdk/aws-apigateway";
+import {HttpMethods} from "@aws-cdk/aws-s3";
 import s3 = require('@aws-cdk/aws-s3');
 import iam = require('@aws-cdk/aws-iam');
 import dynamodb = require('@aws-cdk/aws-dynamodb');
 import lambda = require('@aws-cdk/aws-lambda');
 import event_sources = require('@aws-cdk/aws-lambda-event-sources');
 import cognito = require('@aws-cdk/aws-cognito');
-import { AuthorizationType, PassthroughBehavior } from '@aws-cdk/aws-apigateway';
-import { CfnOutput } from "@aws-cdk/core";
-import { Duration } from '@aws-cdk/core';
 import apigw = require('@aws-cdk/aws-apigateway');
 import s3deploy = require('@aws-cdk/aws-s3-deployment');
-import { HttpMethods } from '@aws-cdk/aws-s3';
 import sqs = require('@aws-cdk/aws-sqs');
 import s3n = require('@aws-cdk/aws-s3-notifications');
 
@@ -103,7 +102,7 @@ export class AwsdevhourStack extends cdk.Stack {
       license: 'Apache-2.0',
       description: 'A layer to enable the PIL library in our Rekognition Lambda',
     });
-    ​
+      ​
     // =====================================================================================
     // Building our AWS Lambda Function; compute for our serverless microservice
     // =====================================================================================
